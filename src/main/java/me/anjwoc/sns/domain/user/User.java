@@ -21,6 +21,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id = null;
 
+    @Comment("유저 이메일")
+    private String email;
+
     @Comment("유저 이름")
     private String userName;
 
@@ -42,9 +45,10 @@ public class User {
     @Comment("삭제 일자")
     private LocalDateTime deletedAt;
 
-    public static User of(String userName, String hashedPassword) {
+    public static User of(String email, String hashedPassword) {
         User user = new User();
-        user.setUserName(userName);
+        user.setEmail(email);
+        user.setUserName(email.split("@")[0]);
         user.setPassword(hashedPassword);
         return user;
     }
