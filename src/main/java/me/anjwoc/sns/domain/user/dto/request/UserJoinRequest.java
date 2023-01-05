@@ -1,4 +1,4 @@
-package me.anjwoc.sns.domain.user.dto;
+package me.anjwoc.sns.domain.user.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

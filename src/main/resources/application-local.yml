@@ -10,19 +10,26 @@ spring:
     username: ${DB_USERNAME}
     password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
-    hikari:
-      schema: classpath*:db/schema.sql
 
   jpa:
     database: postgresql
     hibernate:
-      ddl-auto: none
+      ddl-auto: update
     properties:
       hibernate:
         show_sql: true
         format_sql: true
         default_batch_fetch_size: 1000
         dialect: org.hibernate.dialect.PostgreSQLDialect
+      generate-ddl: true
+      defer-datasource-initialization: true
+
+    open-in-view: false
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath*:schema.sql
+
 
 #  servlet:
 #    # 파일 업로드 사이즈 제한

@@ -1,7 +1,8 @@
-package me.anjwoc.sns.domain.user.dto;
+package me.anjwoc.sns.domain.user.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import me.anjwoc.sns.domain.user.dto.UserDto;
 
 @Getter
 @AllArgsConstructor
